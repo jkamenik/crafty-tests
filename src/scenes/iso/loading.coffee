@@ -1,9 +1,12 @@
 Crafty.scene('Loading',->
-  iso = Crafty.diamondIso.init(128,128,20,20);
+  Crafty.e('CenterText').text('Loading')
   
-  Crafty.addEvent({}, Crafty.stage.elem, "mousedown", (event)->
-    console.log 'Mouse down', event
-    iso.place(2, 1, 0, Crafty.e('2D, DOM, Color').color('red').attr({w:128, h:128}));
-  );
+  Crafty.sprite(128, "assets/iso_sprites.png", {
+      grass:    [0,0,1,1],
+      grassSel: [0,1,1,1],
+      stone:    [1,0,1,1],
+      stoneSel: [1,1,1,1]
+  })
   
+  Crafty.scene('Game')
 )
