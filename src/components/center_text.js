@@ -2,9 +2,13 @@
 Crafty.c('CenterText', {
   init: function() {
     this.requires('2D, DOM, Text');
-    return this.attr({
-      x: Crafty.DOM.window.width / 2,
-      y: Crafty.DOM.window.height / 2
+    return this.recenter();
+  },
+  recenter: function() {
+    this.attr({
+      x: (Crafty.viewport.width - this.attr('w')) / 2,
+      y: (Crafty.viewport.height - this.attr('h')) / 2
     });
+    return this;
   }
 });
