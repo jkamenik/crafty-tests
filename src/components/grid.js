@@ -8,10 +8,13 @@ Crafty.c('Grid', {
   place: function(x, y) {
     var values;
     values = this._setGrid();
+    console.log('Place', values);
+    console.log(x, y);
     this.attr({
       x: x * values.w,
       y: y * values.h
     });
+    console.log(this);
     return this;
   },
   _setGrid: function() {

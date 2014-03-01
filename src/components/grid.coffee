@@ -7,10 +7,13 @@ Crafty.c('Grid',{
   # places an item on an X, Y based on its size
   place: (x,y)->
     values = this._setGrid()
+    console.log 'Place', values
+    console.log x, y
     this.attr {
       x: x * values.w,
       y: y * values.h
     }
+    console.log this
     this
     
   _setGrid: ->
